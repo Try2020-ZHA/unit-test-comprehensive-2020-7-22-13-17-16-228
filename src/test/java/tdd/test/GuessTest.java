@@ -34,17 +34,28 @@ public class GuessTest {
         //when
         String result=guess.compareTheInputAndAnswer(input);
         //then
-        Assertions.assertEquals("0A0B",result);
+        Assertions.assertEquals("1A0B",result);
     }
 
     @Test
     public void should_output_1A1B_when_guess_four_numbers_given_1672(){
         //given
-        int[] input={1,6,7,8};
+        int[] input={1,6,7,2};
         Guess guess=new Guess();
         //when
         String result=guess.compareTheInputAndAnswer(input);
         //then
-        Assertions.assertEquals("0A0B",result);
+        Assertions.assertEquals("1A1B",result);
+    }
+
+    @Test
+    public void should_output_0A1B_when_guess_four_numbers_given_5672(){
+        //given
+        int[] input={5,6,7,2};
+        Guess guess=new Guess();
+        //when
+        String result=guess.compareTheInputAndAnswer(input);
+        //then
+        Assertions.assertEquals("0A1B",result);
     }
 }
