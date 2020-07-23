@@ -8,8 +8,8 @@ public class Guess {
     }
 
     public String compareTheInputAndAnswer(int[] input){
-        if(!isTheInputArrayLegal(input))
-            return "the input illegal";
+//        if(!isTheInputArrayLegal(input))
+//            return "the input illegal";
         int countOfRightPositionElement=this.countHowManyNumberInTheRightPosition(input);
         int countOfIncludedNumber=this.countHowManyNumberIncludedInTheAnswer(input);
         return countOfRightPositionElement+"A"+(countOfIncludedNumber-countOfRightPositionElement)+"B";
