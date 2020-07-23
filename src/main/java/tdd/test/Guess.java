@@ -1,7 +1,9 @@
 package tdd.test;
 
 public class Guess {
-    public Guess(){
+    private AnswerGenerator answerGenerator;
+    public Guess(AnswerGenerator answerGenerator){
+        this.answerGenerator=answerGenerator;
     }
 
     public String compareTheInputAndAnswer(int[] input,int[] answer){
