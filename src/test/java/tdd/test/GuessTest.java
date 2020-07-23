@@ -23,6 +23,6 @@ public class GuessTest {
         //when
         String result=guess.compareTheInputAndAnswer(input);
         //then
-        Assertions.assertEquals("4A0B",result);
+        Assertions.assertEquals("0A0B",result);
     }
 }
