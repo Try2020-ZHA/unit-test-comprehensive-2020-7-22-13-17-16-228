@@ -10,8 +10,7 @@ public class Guess {
     public String compareTheInputAndAnswer(int[] input){
         int countOfRightPositionElement=this.countHowManyNumberInTheRightPosition(input);
         int countOfIncludedNumber=this.countHowManyNumberIncludedInTheAnswer(input);
-        //return countOfRightPositionElement+"A"+(countOfIncludedNumber-countOfRightPositionElement)+"B";
-        return "0A0B";
+        return countOfRightPositionElement+"A"+(countOfIncludedNumber-countOfRightPositionElement)+"B";
     }
 
     private int countHowManyNumberInTheRightPosition(int[] input){
