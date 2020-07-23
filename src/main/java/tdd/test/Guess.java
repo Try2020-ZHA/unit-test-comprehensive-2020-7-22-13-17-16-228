@@ -8,13 +8,15 @@ public class Guess {
     }
 
     public String compareTheInputAndAnswer(int[] input){
-        return this.countHowManyNumberInTheRightPosition(input)+"A"+this.countHowManyNumberIncludedInTheAnswer(input)+"B";
+        int countOfRightPositionElement=this.countHowManyNumberInTheRightPosition(input);
+        int countOfIncludedNumber=this.countHowManyNumberIncludedInTheAnswer(input);
+        return countOfRightPositionElement+"A"+(countOfIncludedNumber-countOfRightPositionElement)+"B";
     }
 
     private int countHowManyNumberInTheRightPosition(int[] input){
         int count=0;
         for(int i=0;i<input.length;i++){
-            if(this.answer[i]==input[i]){
+            if(input[i]==this.answer[i]){
                 count++;
             }
         }
