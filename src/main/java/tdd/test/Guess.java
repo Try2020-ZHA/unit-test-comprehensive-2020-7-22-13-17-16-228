@@ -1,17 +1,14 @@
 package tdd.test;
 
 public class Guess {
-    private int[] answer;
     public Guess(){
-        int[] answer={1,2,3,4};
-        this.answer=answer;
     }
 
-    public String compareTheInputAndAnswer(int[] input){
+    public String compareTheInputAndAnswer(int[] input,int[] answer){
         if(!isTheInputArrayLegal(input))
-            return "the input illegal";
-        int countOfRightPositionElement=this.countHowManyNumberInTheRightPosition(input);
-        int countOfIncludedNumber=this.countHowManyNumberIncludedInTheAnswer(input);
+            return "Wrong Input，Input again";
+        int countOfRightPositionElement=this.countHowManyNumberInTheRightPosition(input,answer);
+        int countOfIncludedNumber=this.countHowManyNumberIncludedInTheAnswer(input,answer);
         return countOfRightPositionElement+"A"+(countOfIncludedNumber-countOfRightPositionElement)+"B";
     }
 
@@ -25,17 +22,17 @@ public class Guess {
         return true;
     }
 
-    private int countHowManyNumberInTheRightPosition(int[] input){
+    private int countHowManyNumberInTheRightPosition(int[] input,int[] answer){
         int count=0;
         for(int i=0;i<input.length;i++){
-            if(input[i]==this.answer[i]){
+            if(input[i]==answer[i]){
                 count++;
             }
         }
         return count;
     }
 
-    private int countHowManyNumberIncludedInTheAnswer(int[] input){
+    private int countHowManyNumberIncludedInTheAnswer(int[] input,int[] answer){
         int count=0;
         for(int i=0;i<input.length;i++){
             for(int j=0;j<input.length;j++){
