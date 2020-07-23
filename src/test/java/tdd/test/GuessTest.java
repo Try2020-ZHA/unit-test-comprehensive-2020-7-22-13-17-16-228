@@ -51,8 +51,8 @@ public class GuessTest {
     @Test
     public void should_output_0A1B_when_guess_four_numbers_given_5672(){
         //given
-        int[] input={5,6,7,2};
         Guess guess=new Guess();
+        int[] input={5,6,7,2};
         //when
         String result=guess.compareTheInputAndAnswer(input);
         //then
