@@ -58,4 +58,15 @@ public class GuessTest {
         //then
         Assertions.assertEquals("0A1B",result);
     }
+
+    @Test
+    public void should_output_0A4B_when_guess_four_numbers_given_4321(){
+        //given
+        Guess guess=new Guess();
+        int[] input={4,3,2,1};
+        //when
+        String result=guess.compareTheInputAndAnswer(input);
+        //then
+        Assertions.assertEquals("0A4B",result);
+    }
 }
