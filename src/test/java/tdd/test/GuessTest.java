@@ -12,7 +12,7 @@ public class GuessTest {
         //when
         String result=guess.compareTheInputAndAnswer(input);
         //then
-        Assertions.assertEquals("illegal",result);
+        Assertions.assertEquals("the input illegal",result);
     }
 
     @Test
