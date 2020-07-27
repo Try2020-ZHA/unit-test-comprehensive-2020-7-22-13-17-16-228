@@ -16,6 +16,8 @@ public class Guess {
     }
 
     private boolean isTheInputArrayLegal(int[] input){
+        if(input.length!=4)
+            return false;
         for(int i=0;i<input.length-1;i++){
             for(int j=i+1;j<input.length;j++){
                 if(input[i]==input[j])
