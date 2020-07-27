@@ -1,5 +1,7 @@
 package tdd.test;
 
+import java.util.Arrays;
+
 public class Guess {
     private AnswerGenerator answerGenerator;
     private final static String wrongInputMessage="Wrong Input，Input again";
@@ -16,6 +18,7 @@ public class Guess {
     }
 
     private boolean isTheInputArrayLegal(int[] input){
+        input = Arrays.stream(input).distinct().toArray();
         if(input.length!=4)
             return false;
         for(int i=0;i<input.length-1;i++){
