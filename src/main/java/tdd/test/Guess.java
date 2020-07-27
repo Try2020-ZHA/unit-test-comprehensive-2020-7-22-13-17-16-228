@@ -7,6 +7,8 @@ import java.util.stream.Stream;
 public class Guess {
     private AnswerGenerator answerGenerator;
     private final static String wrongInputMessage="Wrong Input，Input again";
+    private final static String outputA="A";
+    private final static String outputB="B";
     public Guess(AnswerGenerator answerGenerator){
         this.answerGenerator=answerGenerator;
     }
@@ -16,7 +18,7 @@ public class Guess {
             return wrongInputMessage;
         int countOfRightPositionElement=this.countHowManyNumberInTheRightPosition(input,answer);
         int countOfIncludedNumber=this.countHowManyNumberIncludedInTheAnswer(input,answer);
-        return countOfRightPositionElement+"A"+(countOfIncludedNumber-countOfRightPositionElement)+"B";
+        return countOfRightPositionElement+outputA+(countOfIncludedNumber-countOfRightPositionElement)+outputB;
     }
 
     private boolean isTheInputArrayLegal(int[] input){
