@@ -1,6 +1,8 @@
 package tdd.test;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Guess {
     private AnswerGenerator answerGenerator;
@@ -33,15 +35,7 @@ public class Guess {
     }
 
     private int countHowManyNumberIncludedInTheAnswer(int[] input,int[] answer){
-        int count=0;
-        for(int i=0;i<input.length;i++){
-            for(int j=0;j<input.length;j++){
-                if(answer[i]==input[j]){
-                    count++;
-                    break;
-                }
-            }
-        }
-        return count;
+        int[] concatArray = IntStream.concat(Arrays.stream(input),Arrays.stream(answer)).distinct().toArray();
+        return 8-concatArray.length;
     }
 }
