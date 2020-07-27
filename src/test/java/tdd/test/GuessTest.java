@@ -104,4 +104,18 @@ public class GuessTest {
         //then
         Assertions.assertEquals("0A4B",result);
     }
+
+    @Test
+    void should_output_wrong_answer_when_guess_four_numbers_given_123(){
+        //given
+        int[] input={1,2,3};
+        int[] answer={1,2,3,4};
+        AnswerGenerator answerGenerator= Mockito.mock(AnswerGenerator.class);
+        when(answerGenerator.generate()).thenReturn(answer);
+        Guess guess=new Guess(answerGenerator);
+        //when
+        String result=guess.compareTheInputAndAnswer(input,answer);
+        //then
+        Assertions.assertEquals("Wrong Input，Input again",result);
+    }
 }
