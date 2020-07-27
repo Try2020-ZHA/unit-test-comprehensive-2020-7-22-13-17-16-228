@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.util.List;
+
 import static org.mockito.Mockito.when;
 
 public class GuessTest {
@@ -117,5 +119,15 @@ public class GuessTest {
         String result=guess.compareTheInputAndAnswer(input,answer);
         //then
         Assertions.assertEquals("Wrong Input，Input again",result);
+    }
+
+    @Test
+    void should_output_4_when_generate_random_answer_given_testAnswerGenerator(){
+        //given
+        TestAnswerGenerator testAnswerGenerator=new TestAnswerGenerator();
+        //when
+        int length=testAnswerGenerator.generateRandom().length;
+        //then
+        Assertions.assertEquals(4,length);
     }
 }
