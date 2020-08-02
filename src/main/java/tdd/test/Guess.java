@@ -6,19 +6,19 @@ import java.util.stream.Stream;
 
 public class Guess {
     private AnswerGenerator answerGenerator;
-    private final static String wrongInputMessage="Wrong Input，Input again";
-    private final static String outputA="A";
-    private final static String outputB="B";
+    private final static String WrongInputMessage="Wrong Input，Input again";
+    private final static String OutputA="A";
+    private final static String OutputB="B";
     public Guess(AnswerGenerator answerGenerator){
         this.answerGenerator=answerGenerator;
     }
 
     public String compareTheInputAndAnswer(int[] input,int[] answer){
         if(!isTheInputArrayLegal(input))
-            return wrongInputMessage;
+            return WrongInputMessage;
         int countOfRightPositionElement=this.countHowManyNumberInTheRightPosition(input,answer);
         int countOfIncludedNumber=this.countHowManyNumberIncludedInTheAnswer(input,answer);
-        return countOfRightPositionElement+outputA+(countOfIncludedNumber-countOfRightPositionElement)+outputB;
+        return countOfRightPositionElement+OutputA+(countOfIncludedNumber-countOfRightPositionElement)+OutputB;
     }
 
     private boolean isTheInputArrayLegal(int[] input){
