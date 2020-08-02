@@ -16,9 +16,9 @@ public class Guess {
     public String compareTheInputAndAnswer(int[] input,int[] answer){
         if(!isTheInputArrayLegal(input))
             return WrongInputMessage;
-        int countOfRightPositionElement=this.countHowManyNumberInTheRightPosition(input,answer);
-        int countOfIncludedNumber=this.countHowManyNumberIncludedInTheAnswer(input,answer);
-        return countOfRightPositionElement+OutputA+(countOfIncludedNumber-countOfRightPositionElement)+OutputB;
+        int countOfA=this.countOfA(input,answer);
+        int countOfIncludedNumber=this.countOfIncludedNumber(input,answer);
+        return String.format("%d%s%d%s",countOfA,OutputA,(countOfIncludedNumber-countOfA),OutputB);
     }
 
     private boolean isTheInputArrayLegal(int[] input){
@@ -28,7 +28,7 @@ public class Guess {
         return input.length==4;
     }
 
-    private int countHowManyNumberInTheRightPosition(int[] input,int[] answer){
+    private int countOfA(int[] input,int[] answer){
         int count=0;
         for(int i=0;i<input.length;i++){
             if(input[i]==answer[i]){
@@ -38,8 +38,9 @@ public class Guess {
         return count;
     }
 
-    private int countHowManyNumberIncludedInTheAnswer(int[] input,int[] answer){
+    private int countOfIncludedNumber(int[] input,int[] answer){
         int[] concatArray = IntStream.concat(Arrays.stream(input),Arrays.stream(answer)).distinct().toArray();
         return 8-concatArray.length;
     }
+
 }
