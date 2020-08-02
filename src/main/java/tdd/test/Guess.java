@@ -1,8 +1,8 @@
 package tdd.test;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Guess {
     private AnswerGenerator answerGenerator;

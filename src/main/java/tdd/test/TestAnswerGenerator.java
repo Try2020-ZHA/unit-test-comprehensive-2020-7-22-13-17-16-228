@@ -20,18 +20,13 @@ public class TestAnswerGenerator implements AnswerGenerator {
         return answer;
     }
 
-    public int[] generateRandom(){
+    public Integer[] generateRandom(){
         List<Integer> randomAnswer=new ArrayList<>(4);
         Random random=new Random();
         while (randomAnswer.size()<4){
-            int randomNumber=random.nextInt(10);
-            randomAnswer.add(randomNumber);
+            randomAnswer.add(random.nextInt(10));
             randomAnswer = randomAnswer.stream().distinct().collect(Collectors.toList());
         }
-        int[] result=new int[4];
-        for(int i=0;i<4;i++){
-            result[i]=randomAnswer.get(i);
-        }
-        return result;
+        return randomAnswer.toArray(new Integer[4]);
     }
 }
