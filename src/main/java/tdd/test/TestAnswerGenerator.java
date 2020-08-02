@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class TestAnswerGenerator implements AnswerGenerator {
     private int[] answer;
@@ -20,13 +19,13 @@ public class TestAnswerGenerator implements AnswerGenerator {
         return answer;
     }
 
-    public Integer[] generateRandom(){
+    public int[] generateRandom(){
         List<Integer> randomAnswer=new ArrayList<>(4);
         Random random=new Random();
         while (randomAnswer.size()<4){
             randomAnswer.add(random.nextInt(10));
             randomAnswer = randomAnswer.stream().distinct().collect(Collectors.toList());
         }
-        return randomAnswer.toArray(new Integer[4]);
+        return Arrays.stream(randomAnswer.toArray(new Integer[4])).mapToInt(Integer::valueOf).toArray();
     }
 }

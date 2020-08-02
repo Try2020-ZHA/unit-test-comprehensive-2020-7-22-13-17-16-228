@@ -1,6 +1,7 @@
 package tdd.test;
 
 import java.util.Arrays;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -11,6 +12,10 @@ public class Guess {
     private final static String OutputB="B";
     public Guess(AnswerGenerator answerGenerator){
         this.answerGenerator=answerGenerator;
+    }
+
+    public int[] getRandomAnswer(){
+        return this.answerGenerator.generateRandom();
     }
 
     public String compareTheInputAndAnswer(int[] input,int[] answer){

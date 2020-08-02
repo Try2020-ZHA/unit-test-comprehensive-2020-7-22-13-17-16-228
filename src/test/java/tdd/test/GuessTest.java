@@ -124,7 +124,7 @@ public class GuessTest {
         //given
         TestAnswerGenerator testAnswerGenerator=new TestAnswerGenerator();
         //when
-        Integer[] answer=testAnswerGenerator.generateRandom();
+        int[] answer=testAnswerGenerator.generateRandom();
         int length=answer.length;
         for(int i=0;i<4;i++){
             for(int j=i+1;j<4;j++){
