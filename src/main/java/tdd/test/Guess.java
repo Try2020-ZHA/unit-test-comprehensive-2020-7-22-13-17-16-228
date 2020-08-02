@@ -22,6 +22,8 @@ public class Guess {
     }
 
     private boolean isTheInputArrayLegal(int[] input){
+        if (input.length>4)
+            return false;
         input = Arrays.stream(input).distinct().toArray();
         return input.length==4;
     }
