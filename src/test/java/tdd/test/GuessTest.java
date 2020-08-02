@@ -126,7 +126,14 @@ public class GuessTest {
         //given
         TestAnswerGenerator testAnswerGenerator=new TestAnswerGenerator();
         //when
-        int length=testAnswerGenerator.generateRandom().length;
+        Integer[] answer=testAnswerGenerator.generateRandom();
+        int length=answer.length;
+        for(int i=0;i<4;i++){
+            for(int j=i+1;j<4;j++){
+                if(answer[i]==answer[j])
+                    length--;
+            }
+        }
         //then
         Assertions.assertEquals(4,length);
     }
